@@ -1,0 +1,2 @@
+<input type="text" onchange="alert('Value changed!')"> 元素值发生变化时发生
+<input type="text" readonly value="Read-only input field" />只读
