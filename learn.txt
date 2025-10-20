@@ -1,2 +1,88 @@
+图片地址位置“需要在新标签页打开得到原始链接”
+https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg
+1.HTML设置
+<!--background=".../...jpg'" 存放图片的路径-->
+<!--设置图片不重复显示-->
+<!--设置图片的位置固定-->
+<!--设置图片达到窗口100%的比例-->
+
+background="https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg" 
+        style="background-repeat:no-repeat;
+               background-attachment:fixed;
+               background-size:100% 100%; 
+               background-opacity: 1;"
++++++=============================
+伪元素法设置透明度
++++++=============================
+a.涉及一个div
+<style>
+        .content {
+          position: relative; /* 父元素相对定位，让伪元素可定位 */
+          width: 500px;
+          height: 300px;
+          padding: 20px;
+          /* 内容样式（文字、子元素等） */
+          color: #fff;
+          font-size: 18px;
+        }
+
+        /* 用伪元素放背景图并设置透明度 */
+        .content::before {
+          content: ""; /* 伪元素必须有content */
+          position: absolute; /* 绝对定位，覆盖整个父元素 */
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url("https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg"); /* 网络图片 */
+          background-size: cover; /* 图片铺满 */
+          opacity: 0.8; /* 仅背景图40%透明度 */
+          z-index: -1; /* 图片在内容下方，不遮挡文字 */
+        }
+        </style>
+        
+b.设置body
+<style>
+    /* 清除默认边距，避免背景图周围留白 */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; /* 确保body至少占满屏幕高度 */
+      position: relative; /* 关键：让伪元素相对于body定位 */
+    }
+
+    /* 用body的伪元素设置背景图，并铺满整个页面 */
+    body::before {
+      content: ""; /* 伪元素必须有content */
+      position: absolute; /* 绝对定位，脱离文档流，不影响其他元素 */
+      top: 0;
+      left: 0;
+      /* 宽度和高度设为100%，覆盖整个body */
+      width: 100%;
+      height: 100%;
+      /* 背景图设置 */
+      background-image: url("https://example.com/background.jpg"); /* 网络图片地址 */
+      background-size: cover; /* 图片自适应铺满（可能裁剪） */
+      background-position: center; /* 图片居中显示 */
+      background-attachment: fixed; /* 可选：背景图固定，滚动时不移动 */
+      /* 设置背景图透明度（0-1） */
+      opacity: 0.3;
+      /* 层级设为-1，确保在所有内容下方 */
+      z-index: -1;
+    }
+
+    /* 示例：页面中的div内容（不会被背景图遮挡，也不会受透明度影响） */
+    .box {
+      width: 200px;
+      height: 150px;
+      margin: 20px;
+      padding: 10px;
+      background-color: #fff; /* 白色背景的div，内容清晰可见 */
+    }
+  </style>
+2.CSS链接渲染装饰
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" href="style.css">
+
 <input type="text" onchange="alert('Value changed!')"> 元素值发生变化时发生
 <input type="text" readonly value="Read-only input field" />只读
