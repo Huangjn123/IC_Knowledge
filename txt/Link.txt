@@ -3,5 +3,6 @@ https://github.com/Huangjn123/IC_Knowledge/blob/main/CSS/Possition.css
 
 
 Image链接
+https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/hajimi.jpg
 
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg
