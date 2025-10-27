@@ -1,11 +1,47 @@
 /* 给 body 加边框：红色，2px 实线 */
 body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* 确保body至少占满屏幕高度 */
+  position: relative; /* 关键：让伪元素相对于body定位 */
   border-top: 2px solid orange; /* 仅顶部边框 */
   border-bottom: 2px solid orange; /* 仅底部边框 */
-  padding: 10px; /* 可选：给边框和内容之间留些间距，避免拥挤 */
+  font-family: sans-serif;/*字体加粗*/
+  background-image: url("https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg");/*背景图片*/
+  background-repeat: no-repeat;/*图片不重复*/
+  overflow: hidden;/*溢出隐藏*/
+  background-size: cover;/*背景覆盖窗口*/
 }
 
 /* 或给 html 加边框（效果类似，根据需求选择） */
 html {
   border: 3px dashed blue;
+}
+
+/* 用body的伪元素设置背景图，并铺满整个页面 */
+body::before {
+  content: ""; /* 伪元素必须有content */
+  position: absolute; /* 绝对定位，脱离文档流，不影响其他元素 */
+  top: 0;
+  left: 0;
+  /* 宽度和高度设为100%，覆盖整个body */
+  width: 100%;
+  height: 100%;
+  /* 背景图设置 */
+  background-image: url("https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg"); /* 网络图片地址 */
+  background-size: cover; /* 图片自适应铺满（可能裁剪） */
+  background-position: center; /* 图片居中显示 */
+  background-attachment: fixed; /* 可选：背景图固定，滚动时不移动 */
+  /* 设置背景图透明度（0-1） */
+  opacity: 0.3;
+  /* 层级设为-1，确保在所有内容下方 */
+  z-index: -1;
+}
+/* 示例：页面中的div内容（不会被背景图遮挡，也不会受透明度影响） */
+.box {
+  width: 200px;
+  height: 150px;
+  margin: 20px;
+  padding: 10px;
+  background-color: #fff; /* 白色背景的div，内容清晰可见 */
 }

@@ -1,7 +1,0 @@
-body{
-    font-family: sans-serif;/*字体加粗*/
-    background-image: url("https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg");/*背景图片*/
-    background-repeat: no-repeat;/*图片不重复*/
-    overflow: hidden;/*溢出隐藏*/
-    background-size: cover;/*背景覆盖窗口*/
-}

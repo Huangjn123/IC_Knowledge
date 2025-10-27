@@ -1,6 +1,8 @@
-CSS链接
-https://github.com/Huangjn123/IC_Knowledge/blob/main/CSS/Possition.css
+都是采用Raw原始路径访问具体的
 
+CSS链接
+https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/Possition.css
+https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/frame.css
 
 Image链接
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/hajimi.jpg
