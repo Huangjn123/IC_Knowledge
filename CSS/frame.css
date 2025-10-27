@@ -19,7 +19,7 @@ body::before {
   width: 100%;
   height: 100%;
   /* 背景图设置 */
-  background-image: url("https://example.com/background.jpg"); /* 网络图片地址 */
+  background-image: url("https://example.com/https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg.jpg"); /* 网络图片地址 */
   background-size: cover; /* 图片自适应铺满（可能裁剪） */
   background-position: center; /* 图片居中显示 */
   background-attachment: fixed; /* 可选：背景图固定，滚动时不移动 */

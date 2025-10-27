@@ -1,5 +1,8 @@
 都是采用Raw原始路径访问具体的
 
+本地链接
+/home/huangjn/IC_Knowledge/CSS/frame.css
+/home/huangjn/IC_Knowledge/CSS/Possition.css
 CSS链接
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/Possition.css
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/frame.css

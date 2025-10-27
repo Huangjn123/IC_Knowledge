@@ -2,4 +2,10 @@
 <p>2025.10.14</p>
 <p>我的网站怎么样，吊不吊，后面持续更新，这就是Github</p>
 
+<link rel="stylesheet" href="https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/Possition.css" type="text/css">
+<link rel="stylesheet" href="https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/frame.css" type="text/css">
 
+<div onmouseover="this.style.backgroundColor='black'">Hover over me</div>
+            <input type="text" readonly value="Read-only input field" />
+            <p>这就是IC</p>
+            <p>整一个校园一手信息</p>
