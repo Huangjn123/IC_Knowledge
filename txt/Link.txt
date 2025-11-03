@@ -3,9 +3,17 @@
 本地链接
 /home/huangjn/IC_Knowledge/CSS/frame.css
 /home/huangjn/IC_Knowledge/CSS/Possition.css
+
+Github首页地址
+https://huangjn123.github.io/IC_Knowledge/index.html
+
 CSS链接
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/Possition.css
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/frame.css
+https://huangjn123.github.io/IC_Knowledge/CSS/frame.css
+
+
+https://huangjn123.github.io/IC_Knowledge/pages/about.html
 
 Image链接
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/hajimi.jpg
