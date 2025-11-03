@@ -4,71 +4,17 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>IC知识汇总</title>
-        <style>
-            /* 给 body 加边框：红色，2px 实线 */
-            body {
-              margin: 0;
-              padding: 0;
-              min-height: 100vh; /* 确保body至少占满屏幕高度 */
-              position: relative; /* 关键：让伪元素相对于body定位 */
-            }
-            /* 用body的伪元素设置背景图，并铺满整个页面 */
-            body::before {
-              content: ""; /* 伪元素必须有content */
-              position: absolute; /* 绝对定位，脱离文档流，不影响其他元素 */
-              top: 0;
-              left: 0;
-              /* 宽度和高度设为100%，覆盖整个body */
-              width: 100%;
-              height: 100%;
-              /* 背景图设置 */
-              background-image: url("https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/AI.jpg"); /* 网络图片地址 */
-              background-size: cover; /* 图片自适应铺满（可能裁剪） */
-              background-position: center; /* 图片居中显示 */
-              background-attachment: fixed; /* 可选：背景图固定，滚动时不移动 */
-              /* 设置背景图透明度（0-1） */
-              opacity: 0.3;
-              /* 层级设为-1，确保在所有内容下方 */
-              z-index: -1;
-            }
-            /* 示例：页面中的div内容（不会被背景图遮挡，也不会受透明度影响） */
-            .box {
-              width: 200px;
-              height: 150px;
-              margin: 20px;
-              padding: 10px;
-              background-color: #8d3131; /* 白色背景的div，内容清晰可见 */
-            }
-            .fixed-text {
-              /* 核心：固定定位，相对于浏览器窗口 */
-              position: fixed;
-              top: 0; /* 距离窗口顶部 0 像素（紧贴顶部） */
-              left: 0; /* 距离窗口左侧 0 像素（靠左） */
-              width: 24%; /* 宽度占满整个窗口（可选，根据需求调整） */
-              opacity: 0.8;          
-              /* 可选样式：美化固定文本区域 */
-              background-color: rgba(42, 148, 10, 0.911); /* 背景色（避免被下方内容遮挡） */
-              padding: 0px; /* 内边距 */
-              border-bottom: 0px solid #eee; /* 底部边框（分隔内容） */
-              z-index: 999; /* 层级优先级（数值越大越靠上，避免被其他元素覆盖） */
-            }
-            
-            /* 可选：给下方内容添加顶部间距，避免被固定文本遮挡 */
-            .content {
-              margin-top: 50px; /* 数值根据固定文本的高度调整 */
-            }
-        </style>
+        <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css">
     </head>
     <body >
         <div class="fixed-text">
-            
             <p style="text-align:center;">
-                <img src="https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/hajimi.jpg" alt="哈基米" width="40px" height="40px">
+                <img src="https://huangjn123.github.io/IC_Knowledge/Image/hajimi.jpg" alt="哈基米" width="40px" height="40px">
                 <br>
                 <strong>
                     集成电路知识汇总
                 </strong>
-                <br>上次更新：2025.10.27
+                <br>上次更新：2025.11.03
             </p>
         </div>
 
@@ -76,7 +22,7 @@
             IC Knowledge Pooling
             <p>哈基米南北绿豆，阿西噶阿西</p>
             <p><button onclick="alert('祝你今天过得开心!早睡早起，身体健康，永远不死')">点击送温暖</button> </p>
-            <img src="https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/Image/Circuit.jpg"  width="128px" height="85px">
+            <img src="https://huangjn123.github.io/IC_Knowledge/Image/Circuit.jpg"  width="128px" height="85px">
             <h2> 集成电路</h2>
             <p>集成电路（integrated circuit）是一种微型电子器件或部件。采用一定的工艺，把一个电路中所需的晶体管、电阻、电容和电感等元件及布线互连一起，制作在一小块或几小块半导体晶片或介质基片上，然后封装在一个管壳内，成为具有所需电路功能的微型结构；其中所有元件在结构上已组成一个整体，使电子元件向着微小型化、低功耗、智能化和高可靠性方面迈进了一大步。它在电路中用字母“IC”表示。集成电路发明者为杰克·基尔比（基于锗（Ge）的集成电路）和罗伯特·诺伊斯（基于硅（Si）的集成电路）。当今半导体工业大多数应用的是基于硅的集成电路。 </p>
             <h2> 芯片</h2>

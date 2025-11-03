@@ -1,5 +1,9 @@
 都是采用Raw原始路径访问具体的
 
+Link语法
+<link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/frame.css"
+
+
 本地链接
 /home/huangjn/IC_Knowledge/CSS/frame.css
 /home/huangjn/IC_Knowledge/CSS/Possition.css
@@ -11,7 +15,7 @@ CSS链接
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/Possition.css
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/frame.css
 https://huangjn123.github.io/IC_Knowledge/CSS/frame.css
-
+https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css
 
 https://huangjn123.github.io/IC_Knowledge/pages/about.html
 
