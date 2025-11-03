@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多栏目切换</title>
+  <!-- 引入 CSS 样式文件 -->
+  <link rel="stylesheet" href="/home/huangjn/IC_Knowledge/CSS/Layout_Tab.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 栏目标题 -->
+    <div class="tabs">
+      <div class="tab-title active" data-tab="tab1">栏目一</div>
+      <div class="tab-title" data-tab="tab2">栏目二</div>
+      <div class="tab-title" data-tab="tab3">栏目三</div>
+    </div>
+
+    <!-- 栏目内容 -->
+    <div class="contents">
+      <div class="tab-content active" id="tab1">
+        <h3>栏目一内容</h3>
+        <p>这是栏目一的详细内容，点击其他标题可切换显示。</p>
+      </div>
+      <div class="tab-content" id="tab2">
+        <h3>栏目二内容</h3>
+        <p>这是栏目二的详细内容，包含更多自定义信息。</p>
+      </div>
+      <div class="tab-content" id="tab3">
+        <h3>栏目三内容</h3>
+        <p>这是栏目三的详细内容，支持扩展更多内容。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 引入 JavaScript 文件（放在 body 末尾，确保 DOM 加载完成） -->
+  <script src="/home/huangjn/IC_Knowledge/JavaScript/Column_Trans.js"></script>
+</body>
+</html>
