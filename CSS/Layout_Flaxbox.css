@@ -1,0 +1,19 @@
+.flaxbox-container {
+  display: flex; /* 启用 Flexbox */
+  gap: 20px; /* 栏间距（可选） */
+  width: 100%; /* 容器宽度 */
+}
+
+.flaxbox-column {
+  flex: 1; /* 两栏平均分配宽度 */
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* 可单独设置某栏宽度 */
+.flaxbox-left {
+  flex: 1; /* 占 1 份 */
+}
+.flaxbox-right {
+  flex: 2; /* 占 2 份（总宽度为 3 份） */
+}

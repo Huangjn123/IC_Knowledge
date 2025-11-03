@@ -1,0 +1,11 @@
+.grid-container {
+  display: grid; /* 启用 Grid */
+  grid-template-columns: 1fr 1fr 1fr; /* 三栏平均分配（1fr = 1份） */
+  gap: 15px; /* 栏间距 */
+  width: 100%;
+}
+
+.grid-column {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
