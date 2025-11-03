@@ -7,6 +7,7 @@ Link语法
 本地链接
 /home/huangjn/IC_Knowledge/CSS/frame.css
 /home/huangjn/IC_Knowledge/CSS/Possition.css
+/home/huangjn/IC_Knowledge/CSS/Chongdian_boundary.scss
 
 Github首页地址
 https://huangjn123.github.io/IC_Knowledge/index.html

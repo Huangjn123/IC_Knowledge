@@ -1,0 +1,34 @@
+.g-container {
+    position: relative;
+    height: 100vh;
+    min-width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    & > div {
+        height: 100vh;
+        text-align: center;
+        color: #fff;
+        line-height: 100vh;
+        font-size: 3vw;
+    }
+}
+
+.g-middle {
+    order: 2;
+    flex: auto 1 0 ;
+    background: #cc6630;
+}
+
+.g-left {
+    order: 1;
+    flex: 200px 0 0;
+    background: #ffcc00;
+}
+
+.g-right {
+    order: 3;
+    flex: 200px 0 0;
+    background: pink;
+}
