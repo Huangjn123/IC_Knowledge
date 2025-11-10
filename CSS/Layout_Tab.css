@@ -36,6 +36,7 @@
   max-width: 1200px; /* 限制内容最大宽度（避免屏幕太宽时文字拉太长，提升阅读体验） */
   margin: 0 auto; /* 容器水平居中 */
   padding: 0 20px; /* 左右边距（适配移动端，避免内容贴屏幕边缘） */
+  text-align:center;
 }
 
 /* 内容块（独立命名，确保切换逻辑正常） */
@@ -45,6 +46,7 @@
   background: #fff;
   border-radius: 8px; /* 圆角可选，提升美观 */
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  text-align:center;
 }
 
 .tab-content.active {
