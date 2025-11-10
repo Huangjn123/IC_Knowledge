@@ -37,11 +37,17 @@ body::before {
   position: fixed;
   top: 0; /* 距离窗口顶部 0 像素（紧贴顶部） */
   left: 0; /* 距离窗口左侧 0 像素（靠左） */
-  width: 24%; /* 宽度占满整个窗口（可选，根据需求调整） */
+  width: 80px; /* 宽度占满整个窗口（可选，根据需求调整） */
+  max-width:100%;
   opacity: 0.8;          
   /* 可选样式：美化固定文本区域 */
   background-color: rgba(42, 148, 10, 0.911); /* 背景色（避免被下方内容遮挡） */
   padding: 0px; /* 内边距 */
   border-bottom: 0px solid #eee; /* 底部边框（分隔内容） */
   z-index: 999; /* 层级优先级（数值越大越靠上，避免被其他元素覆盖） */
+}
+
+*{
+  box-sizing: inherit;
+  max-width: 100%;
 }
