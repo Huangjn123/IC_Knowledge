@@ -32,3 +32,18 @@
   transform: translateY(0);
   display: block; /* 显示时覆盖默认隐藏 */
 }
+
+//版本1的grid布局
+
+.grid-container {
+  display: grid; /* 启用 Grid */
+  grid-template-columns: 1fr 1fr 1fr; /* 三栏平均分配（1fr = 1份） */
+  gap: 0px; /* 栏间距 */
+  width: 100%;
+}
+
+.grid-column {
+  padding: 20px;
+  text-align:center;
+  border: 1px solid #000000;
+}

@@ -4,7 +4,7 @@
   width: 100%;
   background: #fff;
   opacity: 0.5;  
-  padding: 12px 0;
+  padding: 12px 15px;
   margin: 20px 0 15px 0; /* 上下边距：与顶部内容间距20px，与下方内容间距15px（实现“紧靠”且不贴边） */
   box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 轻微阴影提升层次，可选 */
   text-align: center; /* 导航栏按钮居中（更美观） */

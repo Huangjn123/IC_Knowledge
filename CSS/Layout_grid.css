@@ -1,12 +1,48 @@
 .grid-container {
-  display: grid; /* 启用 Grid */
-  grid-template-columns: 1fr 1fr 1fr; /* 三栏平均分配（1fr = 1份） */
-  gap: 0px; /* 栏间距 */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 桌面端三栏平均分配 */
+  gap: 0; /* 原栏间距为0，保持边框无缝衔接 */
   width: 100%;
+  max-width: 1200px; /* 与内容容器 max-width 一致，视觉统一 */
+  margin: 30px auto 50px; /* 顶部与内容间距，底部留足空白 */
+  padding: 0 20px; /* 桌面端左右边距，与内容容器呼应 */
+  box-sizing: border-box; /* 关键：避免 padding 导致宽度溢出 */
 }
 
 .grid-column {
   padding: 20px;
-  text-align:center;
-  border: 1px solid #000000;
+  text-align: center;
+  border: 1px solid #000;
+  box-sizing: border-box; /* 确保 padding 不撑大边框 */
+  /* 文字溢出处理（避免移动端文字过长撑破格子） */
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* 1. 平板端适配（768px - 992px）：改为两栏 */
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr; /* 两栏平均分配 */
+    gap: 0;
+    padding: 0 15px;
+  }
+}
+
+/* 2. 移动端适配（<768px，手机端）：改为单栏 */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 单栏占满宽度 */
+    margin-left: 80px; /* 避开左侧 fixed-text 的宽度（与内容容器一致） */
+    width: calc(100% - 80px); /* 计算剩余宽度，不溢出屏幕 */
+    padding: 0 15px;
+  }
+
+  .grid-column {
+    padding: 15px; /* 缩小移动端内边距，更紧凑 */
+    margin-bottom: 10px; /* 单栏时添加上下间距，避免边框粘连 */
+  }
+  /* 去掉最后一个格子的底部间距 */
+  .grid-column:last-child {
+    margin-bottom: 0;
+  }
 }
