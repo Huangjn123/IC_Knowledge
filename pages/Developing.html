@@ -8,31 +8,23 @@
   <link rel="stylesheet" href="/home/huangjn/IC_Knowledge/CSS/Layout_Tab.css">
 </head>
 <body>
-  <div class="container">
-    <!-- 栏目标题 -->
-    <div class="tabs">
-      <div class="tab-title active" data-tab="tab1">栏目一</div>
-      <div class="tab-title" data-tab="tab2">栏目二</div>
-      <div class="tab-title" data-tab="tab3">栏目三</div>
-    </div>
-
-    <!-- 栏目内容 -->
-    <div class="contents">
-      <div class="tab-content active" id="tab1">
-        <h3>栏目一内容</h3>
-        <p>这是栏目一的详细内容，点击其他标题可切换显示。</p>
-      </div>
-      <div class="tab-content" id="tab2">
-        <h3>栏目二内容</h3>
-        <p>这是栏目二的详细内容，包含更多自定义信息。</p>
-      </div>
-      <div class="tab-content" id="tab3">
-        <h3>栏目三内容</h3>
-        <p>这是栏目三的详细内容，支持扩展更多内容。</p>
-      </div>
-    </div>
+  <div class="nav">
+    <button data-target="home">首页</button>
+    <button data-target="about">关于</button>
+    <button data-target="contact">联系</button>
   </div>
 
+  <div class="content-container">
+    <div class="content active" id="home">
+      <!-- 首页内容 -->
+    </div>
+    <div class="content" id="about">
+      <!-- 关于页内容 -->
+    </div>
+    <div class="content" id="contact">
+      <!-- 联系页内容 -->
+    </div>
+  </div>
   <!-- 引入 JavaScript 文件（放在 body 末尾，确保 DOM 加载完成） -->
   <script src="/home/huangjn/IC_Knowledge/JavaScript/Column_Trans.js"></script>
 </body>

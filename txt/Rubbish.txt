@@ -9,3 +9,14 @@
             <input type="text" readonly value="Read-only input field" />
             <p>这就是IC</p>
             <p>整一个校园一手信息</p>
+
+
+.content {
+  flex: 1; /* 内容自动填充剩余空间 */
+  display: none; /* 默认隐藏所有内容 */
+  padding: 20px;
+}
+
+.content.active {
+  display: block; /* 显示当前激活内容 */
+}

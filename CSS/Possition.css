@@ -45,8 +45,41 @@ body::before {
   border-bottom: 0px solid #eee; /* 底部边框（分隔内容） */
   z-index: 999; /* 层级优先级（数值越大越靠上，避免被其他元素覆盖） */
 }
+/*以下是JavaScript的切换内容进行*/
+.content-container {
+  min-height: 100vh; /* 占满视口高度 */
+  display: flex; /* 使用 Flex 布局 */
+  flex-direction: column;
+}
 
-/* 可选：给下方内容添加顶部间距，避免被固定文本遮挡 */
+
+
+/*导航栏固定*/
+.nav {
+  position: fixed; /* 固定在顶部 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav button {
+  margin-right: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+/*平滑过渡效果*/
 .content {
-  margin-top: 50px; /* 数值根据固定文本的高度调整 */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease; /* 过渡动画 */
+}
+
+.content.active {
+  opacity: 1;
+  transform: translateY(0);
+  display: block; /* 显示时覆盖默认隐藏 */
 }
