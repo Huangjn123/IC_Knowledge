@@ -1,49 +1,73 @@
 
 /* 导航栏样式（独立命名） */
 .tab-nav {
-  top: 180px; /* 关键：避开顶部 fixed-text 和居中内容的高度（根据你的页面调整） */
-  left: 0;
   width: 100%;
   background: #fff;
   opacity: 0.5;  
-  padding: 15px;
-  z-index: 999; /* 确保导航栏在内容上方，不被遮挡 */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 12px 0;
+  margin: 20px 0 15px 0; /* 上下边距：与顶部内容间距20px，与下方内容间距15px（实现“紧靠”且不贴边） */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 轻微阴影提升层次，可选 */
+  text-align: center; /* 导航栏按钮居中（更美观） */
 }
 
 .tab-nav button {
-  margin-right: 15px;
-  padding: 8px 15px;
+  margin: 0 10px; /* 按钮之间的水平间距 */
+  padding: 8px 20px; /* 按钮内部内边距（控制按钮大小） */
   cursor: pointer;
   border: none;
-  background: #f0f0f0;
+  background: #f5f5f5;
   border-radius: 4px;
+  font-size: 16px;
+  transition: background 0.2s;
 }
 
 .tab-nav button:hover {
-  background: #e0e0e0;
+  background: #e8e8e8;
 }
+.tab-nav button.active { /* 点击后激活样式（可选） */
+  background: #0066cc;
+  color: #fff;
+}
+
 
 /* 内容容器（独立命名，确保全屏） */
 .tab-content-container {
-  min-height: 100vh;
-  padding-top: 240px; /* 关键：给导航栏和顶部内容留空间（= fixed-text高度 + 居中内容高度 + 导航栏高度） */
-  box-sizing: border-box; /* 避免padding导致页面溢出 */
+  width: 100%;
+  max-width: 1200px; /* 限制内容最大宽度（避免屏幕太宽时文字拉太长，提升阅读体验） */
+  margin: 0 auto; /* 容器水平居中 */
+  padding: 0 20px; /* 左右边距（适配移动端，避免内容贴屏幕边缘） */
 }
 
 /* 内容块（独立命名，确保切换逻辑正常） */
 .tab-content {
   display: none; /* 默认隐藏 */
-  width: 100%;
-  max-width: 1200px; /* 可选：限制内容宽度，提升阅读体验 */
-  margin: 0 auto;
-  padding: 20px;
+  padding: 25px; /* 内容内部上下左右内边距（文字不贴容器边缘） */
+  background: #fff;
+  border-radius: 8px; /* 圆角可选，提升美观 */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .tab-content.active {
-  display: block; /* 激活时显示，!important 可选（如果外部CSS有冲突） */
-  /* 保留过渡动画（可选） */
+  display: block;
+  /* 平滑过渡效果（可选，切换更自然） */
   opacity: 1;
   transform: translateY(0);
   transition: all 0.3s ease;
+}
+
+/* 内容标题和段落边距优化（提升阅读体验） */
+.tab-content h1 {
+  margin-top: 0; /* 去掉标题顶部默认margin，避免内容顶部留白过多 */
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.tab-content h2 {
+  color: #333;
+  margin: 25px 0 12px 0;
+}
+.tab-content p {
+  line-height: 1.8; /* 行高优化，更易读 */
+  margin: 0 0 18px 0; /* 段落之间的间距 */
+  color: #444;
 }
