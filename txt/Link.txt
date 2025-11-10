@@ -18,6 +18,10 @@ https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/fr
 https://huangjn123.github.io/IC_Knowledge/CSS/frame.css
 https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css
 
+https://huangjn123.github.io/IC_Knowledge/JavaScript/Column_Trans.js
+
+
+
 https://huangjn123.github.io/IC_Knowledge/pages/about.html
 
 Image链接
