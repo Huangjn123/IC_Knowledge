@@ -1,36 +1,49 @@
-/*以下是JavaScript的切换内容进行*/
-.content-container {
-  min-height: 100vh; /* 占满视口高度 */
-  display: flex; /* 使用 Flex 布局 */
-  flex-direction: column;
-}
 
-
-
-/*导航栏固定*/
-.nav {
-  top: 0;
+/* 导航栏样式（独立命名） */
+.tab-nav {
+  top: 180px; /* 关键：避开顶部 fixed-text 和居中内容的高度（根据你的页面调整） */
   left: 0;
   width: 100%;
-  background: #ffffff;
+  background: #fff;
+  opacity: 0.5;  
   padding: 15px;
-  z-index: 1000;
-  opacity: 0.3;
+  z-index: 999; /* 确保导航栏在内容上方，不被遮挡 */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.nav button {
+.tab-nav button {
   margin-right: 15px;
   padding: 8px 15px;
   cursor: pointer;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 4px;
 }
-/*平滑过渡效果*/
-.content {
-  flex: 1; /* 内容自动填充剩余空间 */
-  display: none; /* 默认隐藏所有内容 */
+
+.tab-nav button:hover {
+  background: #e0e0e0;
+}
+
+/* 内容容器（独立命名，确保全屏） */
+.tab-content-container {
+  min-height: 100vh;
+  padding-top: 240px; /* 关键：给导航栏和顶部内容留空间（= fixed-text高度 + 居中内容高度 + 导航栏高度） */
+  box-sizing: border-box; /* 避免padding导致页面溢出 */
+}
+
+/* 内容块（独立命名，确保切换逻辑正常） */
+.tab-content {
+  display: none; /* 默认隐藏 */
+  width: 100%;
+  max-width: 1200px; /* 可选：限制内容宽度，提升阅读体验 */
+  margin: 0 auto;
   padding: 20px;
 }
 
-.content.active {
-  display: block; /* 显示当前激活内容 */
+.tab-content.active {
+  display: block; /* 激活时显示，!important 可选（如果外部CSS有冲突） */
+  /* 保留过渡动画（可选） */
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
 }
