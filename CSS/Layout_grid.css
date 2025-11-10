@@ -4,7 +4,7 @@
   gap: 0; /* 原栏间距为0，保持边框无缝衔接 */
   width: 100%;
   max-width: 1200px; /* 与内容容器 max-width 一致，视觉统一 */
-  margin: 30px auto 50px; /* 顶部与内容间距，底部留足空白 */
+  margin: 0px; /* 顶部与内容间距，底部留足空白 */
   padding: 0 20px; /* 桌面端左右边距，与内容容器呼应 */
   box-sizing: border-box; /* 关键：避免 padding 导致宽度溢出 */
 }
@@ -32,14 +32,14 @@
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr; /* 单栏占满宽度 */
-    margin-left: 80px; /* 避开左侧 fixed-text 的宽度（与内容容器一致） */
+    margin-left: 0px; /* 避开左侧 fixed-text 的宽度（与内容容器一致） */
     width: calc(100% - 80px); /* 计算剩余宽度，不溢出屏幕 */
     padding: 0 15px;
   }
 
   .grid-column {
     padding: 15px; /* 缩小移动端内边距，更紧凑 */
-    margin-bottom: 10px; /* 单栏时添加上下间距，避免边框粘连 */
+    margin-bottom: 0px; /* 单栏时添加上下间距，避免边框粘连 */
   }
   /* 去掉最后一个格子的底部间距 */
   .grid-column:last-child {
