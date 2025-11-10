@@ -9,13 +9,13 @@
 
 /*导航栏固定*/
 .nav {
-  position: fixed; /* 固定在顶部 */
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
+  background: #ffffff;
   padding: 15px;
   z-index: 1000;
+  opacity: 1;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 

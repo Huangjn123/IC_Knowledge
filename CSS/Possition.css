@@ -45,8 +45,3 @@ body::before {
   border-bottom: 0px solid #eee; /* 底部边框（分隔内容） */
   z-index: 999; /* 层级优先级（数值越大越靠上，避免被其他元素覆盖） */
 }
-
-/* 可选：给下方内容添加顶部间距，避免被固定文本遮挡 */
-.content {
-  margin-top: 50px; /* 数值根据固定文本的高度调整 */
-}

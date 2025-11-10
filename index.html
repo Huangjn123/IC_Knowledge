@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css">
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Flaxbox.css">
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_grid.css">
+        <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Tab.css">
     </head>
     <body >
         <div class="fixed-text">
@@ -29,12 +30,15 @@
             </p>
             <p><button onclick="alert('祝你今天过得开心!早睡早起，身体健康，永远不死')">点击送温暖</button> </p>
             <img src="https://huangjn123.github.io/IC_Knowledge/Image/Circuit.jpg"  width="128px" height="85px">
-            
-            
         </div>
 
-        <div class="flaxbox-container">
-            <div class="flaxbox-column flaxbox-left">
+        <div class="nav">
+          <button data-target="basic">基础知识</button>
+          <button data-target="AI">人工智能</button>
+        </div>
+
+        <div class="content-container">
+            <div class="content active" id="basic">
                 <h1>基础知识</h1>
                 <h2> 集成电路</h2>
                 <p>集成电路（integrated circuit）是一种微型电子器件或部件。采用一定的工艺，把一个电路中所需的晶体管、电阻、电容和电感等元件及布线互连一起，制作在一小块或几小块半导体晶片或介质基片上，然后封装在一个管壳内，成为具有所需电路功能的微型结构；其中所有元件在结构上已组成一个整体，使电子元件向着微小型化、低功耗、智能化和高可靠性方面迈进了一大步。它在电路中用字母“IC”表示。集成电路发明者为杰克·基尔比（基于锗（Ge）的集成电路）和罗伯特·诺伊斯（基于硅（Si）的集成电路）。当今半导体工业大多数应用的是基于硅的集成电路。 </p>
@@ -45,7 +49,8 @@
                 <h2>数字集成电路</h2>
                 <p>数字集成电路是将元器件和连线集成于同一半导体芯片上而制成的数字逻辑电路或系统。根据数字集成电路中包含的门电路或元、器件数量，可将数字集成电路分为小规模集成（SSI）电路、中规模集成MSI电路、大规模集成（LSI）电路、超大规模集成VLSI电路和特大规模集成（ULSI）电路。</p>
             </div>
-            <div class="flaxbox-column flaxbox-right">
+            
+            <div class="content active" id="AI">
                 <h1>AI</h1>
                 <h2>人工智能(AI)</h2>
                 <p>人工智能（AI）是靠算法模型和海量数据 “学习” 的 “虚拟大脑”，不用逐一编程就能自主总结规律、处理任务，它早已融入生活 —— 聊天智能回复、语音转文字、导航路线规划、购物精准推荐等日常场景，以及医院辅助诊断、工厂智能机器人、自动驾驶等专业领域都有它的身影，既能替代重复劳动、突破人类能力局限，还能推动教育、农业等各行业升级，成为提升效率、改变生活的核心动力。</p>
@@ -82,6 +87,6 @@
           <div class="grid-column"><a href ="https://zhihu.com/"> 摸鱼链接3</a></div>
         </div>
 
-
+        <script src="https://huangjn123.github.io/IC_Knowledge/JavaScript/Column_Trans.js"></script>
     </body>
 </html>
