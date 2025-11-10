@@ -10,7 +10,7 @@
             <p>这就是IC</p>
             <p>整一个校园一手信息</p>
 
-
+//默认
 .content {
   flex: 1; /* 内容自动填充剩余空间 */
   display: none; /* 默认隐藏所有内容 */
@@ -19,4 +19,16 @@
 
 .content.active {
   display: block; /* 显示当前激活内容 */
+}
+//平滑过渡
+.content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease; /* 过渡动画 */
+}
+
+.content.active {
+  opacity: 1;
+  transform: translateY(0);
+  display: block; /* 显示时覆盖默认隐藏 */
 }

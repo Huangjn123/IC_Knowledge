@@ -15,7 +15,7 @@
   background: #ffffff;
   padding: 15px;
   z-index: 1000;
-  opacity: 1;
+  opacity: 0.3;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -26,13 +26,11 @@
 }
 /*平滑过渡效果*/
 .content {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease; /* 过渡动画 */
+  flex: 1; /* 内容自动填充剩余空间 */
+  display: none; /* 默认隐藏所有内容 */
+  padding: 20px;
 }
 
 .content.active {
-  opacity: 1;
-  transform: translateY(0);
-  display: block; /* 显示时覆盖默认隐藏 */
+  display: block; /* 显示当前激活内容 */
 }
