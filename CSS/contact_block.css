@@ -2,16 +2,6 @@
 /* 依赖：Tailwind CSS + Font Awesome */
 
 /* 基础样式重置 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background-color: #F7F8FA;
-}
 
 /* 自定义工具类（对应Tailwind @layer utilities） */
 .content-block-transition {
