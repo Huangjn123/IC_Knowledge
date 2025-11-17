@@ -43,7 +43,7 @@
 .tab-content {
   display: none; /* 默认隐藏 */
   padding: 25px; /* 内容内部上下左右内边距（文字不贴容器边缘） */
-  background: #fff;
+  background:  transparent;
   border-radius: 8px; /* 圆角可选，提升美观 */
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   text-align:center;
