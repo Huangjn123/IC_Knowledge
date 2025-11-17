@@ -1,0 +1,120 @@
+/* 内容块核心样式 - content-block.css */
+/* 依赖：Tailwind CSS + Font Awesome */
+
+/* 基础样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #F7F8FA;
+}
+
+/* 自定义工具类（对应Tailwind @layer utilities） */
+.content-block-transition {
+  transition: all 0.3s ease;
+}
+
+.content-block-gradient {
+  background: linear-gradient(135deg, var(--tw-gradient-stops));
+}
+
+.content-block-shadow {
+  box-shadow: var(--tw-shadow);
+}
+
+.content-block-hover {
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.content-block-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px 0 rgba(22, 93, 255, 0.15);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* 加载动画 */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.content-block-loading {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 渐变边框动画 */
+@keyframes borderGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.content-block-gradient-border {
+  position: relative;
+  border-radius: 0.75rem;
+  z-index: 0;
+}
+
+.content-block-gradient-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #165DFF, #722ED1, #00B42A, #FF7D00);
+  border-radius: 0.875rem;
+  z-index: -1;
+  animation: borderGradient 4s linear infinite;
+  background-size: 400% 400%;
+}
+
+.content-block-gradient-border > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* 内容块基础样式（补充Tailwind未覆盖的细节） */
+.content-block {
+  border-radius: 1rem; /* 统一圆角 */
+}
+
+/* 图片悬停缩放效果 */
+.content-block img {
+  transition: transform 0.5s ease;
+}
+
+.content-block img:hover {
+  transform: scale(1.05);
+}
+
+/* 链接/按钮交互优化 */
+.content-block a:hover,
+.content-block button:hover {
+  transition: all 0.2s ease;
+}
+
+/* 响应式适配补充 */
+@media (max-width: 768px) {
+  .content-block {
+    padding: 1.25rem; /* 移动端减小内边距 */
+  }
+}

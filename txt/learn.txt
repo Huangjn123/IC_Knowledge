@@ -6,3 +6,62 @@
 <span style="color: red;">这</span> 标红
 &emsp;空格全角
 &nbsp;空格半角
+
+
+内容块属性CSS
+1.引入顺序（必须严格遵守）
+<!-- 1. Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- 2. Font Awesome 图标 -->
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- 3. 内容块核心CSS -->
+<link rel="stylesheet" href="path/to/content-block.css">
+
+2.Tailwind 配置（必需）
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#165DFF',    // 主色
+          secondary: '#722ED1',  // 辅助色
+          success: '#00B42A',    // 成功色
+          warning: '#FF7D00',    // 警告色
+          danger: '#F53F3F',     // 危险色
+          info: '#86909C',       // 信息色
+          dark: '#1D2129',       // 深色
+          light: '#F2F3F5'       // 浅色
+        },
+        fontFamily: {
+          inter: ['Inter', 'system-ui', 'sans-serif'],
+        },
+        boxShadow: {
+          'card': '0 4px 20px 0 rgba(0, 0, 0, 0.05)', // 卡片默认阴影
+          'card-hover': '0 10px 30px 0 rgba(22, 93, 255, 0.15)', // 卡片悬停阴影
+        }
+      },
+    }
+  }
+</script>
+
+3.核心使用
+content-block	内容块基础类（必加）
+content-block-hover	悬停上浮 + 阴影增强效果
+content-block-gradient	渐变背景（需配合 Tailwind 渐变类）
+content-block-gradient-border	渐变边框效果（需嵌套子元素）
+content-block-loading	加载状态（脉冲动画）
+text-balance	文本自动平衡排版
+
+4.示例用法
+<div class="content-block bg-white p-6 shadow-card content-block-transition content-block-hover">
+  <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+    <i class="fa fa-file-text-o text-primary text-xl"></i>
+  </div>
+  <h3 class="text-lg font-semibold text-dark mb-2">示例内容块</h3>
+  <p class="text-info text-sm mb-4 text-balance">这是一个使用独立CSS的内容块示例</p>
+  <a href="#" class="inline-flex items-center text-primary text-sm font-medium hover:underline">
+    查看详情 <i class="fa fa-arrow-right ml-1 text-xs"></i>
+  </a>
+</div>

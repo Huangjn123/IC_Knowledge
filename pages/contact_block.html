@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>精美内容块 CSS 示例</title>
+  <!-- 引入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入 Font Awesome 图标 -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- 配置 Tailwind 自定义主题 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#722ED1',
+            success: '#00B42A',
+            warning: '#FF7D00',
+            danger: '#F53F3F',
+            info: '#86909C',
+            dark: '#1D2129',
+            light: '#F2F3F5'
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 4px 20px 0 rgba(0, 0, 0, 0.05)',
+            'card-hover': '0 10px 30px 0 rgba(22, 93, 255, 0.15)',
+          }
+        },
+      }
+    }
+  </script>
+  
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-block-transition {
+        transition: all 0.3s ease;
+      }
+      .content-block-gradient {
+        background: linear-gradient(135deg, var(--tw-gradient-stops));
+      }
+      .content-block-shadow {
+        box-shadow: var(--tw-shadow);
+      }
+      .content-block-hover {
+        @apply transform hover:-translate-y-1 hover:shadow-card-hover;
+      }
+      .text-balance {
+        text-wrap: balance;
+      }
+    }
+  </style>
+  
+  <style>
+    /* 基础样式重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #F7F8FA;
+    }
+    
+    /* 加载动画 */
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+    
+    .content-block-loading {
+      animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    /* 渐变边框效果 */
+    .content-block-gradient-border {
+      position: relative;
+      border-radius: 0.75rem;
+      z-index: 0;
+    }
+    
+    .content-block-gradient-border::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, #165DFF, #722ED1, #00B42A, #FF7D00);
+      border-radius: 0.875rem;
+      z-index: -1;
+      animation: borderGradient 4s linear infinite;
+      background-size: 400% 400%;
+    }
+    
+    @keyframes borderGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    .content-block-gradient-border > div {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="min-h-screen py-12 px-4 md:px-8">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <!-- 基础样式内容块 -->
+    <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover">
+      <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+        <i class="fa fa-file-text-o text-primary text-xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-dark mb-2">基础内容块</h3>
+      <p class="text-info text-sm mb-4 text-balance">简洁大方的基础样式，适用于大多数信息展示场景，支持响应式布局。</p>
+      <a href="#" class="inline-flex items-center text-primary text-sm font-medium hover:underline">
+        查看详情 <i class="fa fa-arrow-right ml-1 text-xs"></i>
+      </a>
+    </div>
+    
+    <!-- 渐变背景内容块 -->
+    <div class="content-block content-block-gradient from-primary/5 to-secondary/5 rounded-xl p-6 shadow-card content-block-transition content-block-hover">
+      <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm">
+        <i class="fa fa-paint-brush text-secondary text-xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold text-dark mb-2">渐变背景样式</h3>
+      <p class="text-info text-sm mb-4 text-balance">柔和的渐变背景，提升视觉层次感，适合重点内容突出展示。</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-2 py-1 bg-white rounded-full text-xs text-info">渐变</span>
+        <span class="px-2 py-1 bg-white rounded-full text-xs text-info">美观</span>
+        <span class="px-2 py-1 bg-white rounded-full text-xs text-info">重点</span>
+      </div>
+    </div>
+    
+    <!-- 带图片内容块 -->
+    <div class="content-block bg-white rounded-xl overflow-hidden shadow-card content-block-transition content-block-hover">
+      <div class="h-40 overflow-hidden">
+        <img src="https://picsum.photos/600/400?random=1" alt="示例图片" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+      </div>
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-dark mb-2">图文结合内容块</h3>
+        <p class="text-info text-sm mb-4 text-balance">包含图片展示区域，适合文章预览、产品展示等场景，图片支持悬停放大效果。</p>
+        <button class="px-4 py-2 bg-primary text-white rounded-lg text-sm hover:bg-primary/90 transition-colors">
+          了解更多
+        </button>
+      </div>
+    </div>
+    
+    <!-- 渐变边框内容块 -->
+    <div class="content-block-gradient-border">
+      <div class="bg-white rounded-xl p-6 content-block-transition content-block-hover">
+        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+          <i class="fa fa-diamond text-secondary text-xl"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-dark mb-2">渐变边框内容块</h3>
+        <p class="text-info text-sm mb-4 text-balance">带有动态渐变边框效果，视觉冲击力强，适合重要内容或特殊模块展示。</p>
+        <div class="flex justify-between items-center">
+          <span class="text-xs text-info">更新于 2025-11-17</span>
+          <i class="fa fa-star text-warning"></i>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 成功状态内容块 -->
+    <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover border-l-4 border-success">
+      <div class="flex items-start">
+        <div class="w-10 h-10 bg-success/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+          <i class="fa fa-check text-success"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-dark mb-2">成功状态模块</h3>
+          <p class="text-info text-sm mb-3 text-balance">带有左侧彩色边框的状态样式，可用于成功、警告、错误等不同状态提示。</p>
+          <span class="inline-block px-3 py-1 bg-success/10 text-success text-xs rounded-full">已完成</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 加载状态内容块 -->
+    <div class="content-block bg-white rounded-xl p-6 shadow-card">
+      <div class="w-12 h-12 bg-gray-100 rounded-lg content-block-loading mb-4"></div>
+      <div class="h-5 bg-gray-100 rounded content-block-loading mb-3 w-3/4"></div>
+      <div class="h-4 bg-gray-100 rounded content-block-loading mb-4 w-full"></div>
+      <div class="h-4 bg-gray-100 rounded content-block-loading mb-6 w-5/6"></div>
+      <div class="h-10 bg-gray-100 rounded-lg content-block-loading w-2/5"></div>
+    </div>
+    
+    <!-- 深色模式内容块 -->
+    <div class="content-block bg-dark text-white rounded-xl p-6 shadow-card content-block-transition content-block-hover">
+      <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-4">
+        <i class="fa fa-moon-o text-white text-xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold mb-2">深色模式内容块</h3>
+      <p class="text-gray-400 text-sm mb-4 text-balance">深色主题样式，适合夜间模式或深色界面设计，对比度高，视觉舒适。</p>
+      <div class="flex gap-3">
+        <button class="px-4 py-2 bg-white text-dark rounded-lg text-sm hover:bg-gray-200 transition-colors">
+          确认
+        </button>
+        <button class="px-4 py-2 bg-transparent border border-gray-600 rounded-lg text-sm hover:bg-white/5 transition-colors">
+          取消
+        </button>
+      </div>
+    </div>
+    
+    <!-- 警告状态内容块 -->
+    <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover border-t-4 border-warning">
+      <div class="flex items-start">
+        <div class="w-10 h-10 bg-warning/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+          <i class="fa fa-exclamation-triangle text-warning"></i>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-dark mb-2">警告提示模块</h3>
+          <p class="text-info text-sm mb-3 text-balance">顶部边框样式，用于警告、提示等信息展示，视觉清晰明了。</p>
+          <a href="#" class="text-warning text-sm font-medium hover:underline">
+            查看解决方案 <i class="fa fa-external-link ml-1 text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 数据统计内容块 -->
+    <div class="content-block content-block-gradient from-primary/10 to-primary/5 rounded-xl p-6 shadow-card content-block-transition content-block-hover">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h3 class="text-info text-sm mb-1">访问量统计</h3>
+          <p class="text-2xl font-bold text-primary">128,543</p>
+        </div>
+        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+          <i class="fa fa-line-chart text-primary text-xl"></i>
+        </div>
+      </div>
+      <div class="flex items-center text-sm">
+        <span class="text-success flex items-center">
+          <i class="fa fa-arrow-up mr-1"></i> 12.5%
+        </span>
+        <span class="text-info ml-3">较上月</span>
+        <div class="ml-auto h-2 bg-primary/10 rounded-full w-24 overflow-hidden">
+          <div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- 使用说明 -->
+  <div class="max-w-7xl mx-auto mt-16 bg-white rounded-xl p-6 shadow-card">
+    <h3 class="text-xl font-semibold text-dark mb-4">内容块 CSS 使用说明</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <h4 class="text-lg font-medium text-dark mb-2">核心特性</h4>
+        <ul class="list-disc pl-5 text-info space-y-1">
+          <li>响应式设计，适配移动端到桌面端</li>
+          <li>多种风格变体：基础、渐变、图文、状态型等</li>
+          <li>丰富的交互效果：悬停上浮、阴影变化、图片缩放</li>
+          <li>支持加载状态、深色模式</li>
+          <li>可自定义颜色、边框、阴影等样式</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-medium text-dark mb-2">使用方法</h4>
+        <ul class="list-disc pl-5 text-info space-y-1">
+          <li>基础类：<code class="bg-light px-1 py-0.5 rounded text-xs">content-block</code></li>
+          <li>悬停效果：<code class="bg-light px-1 py-0.5 rounded text-xs">content-block-hover</code></li>
+          <li>渐变背景：<code class="bg-light px-1 py-0.5 rounded text-xs">content-block-gradient</code></li>
+          <li>渐变边框：<code class="bg-light px-1 py-0.5 rounded text-xs">content-block-gradient-border</code></li>
+          <li>加载状态：<code class="bg-light px-1 py-0.5 rounded text-xs">content-block-loading</code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
