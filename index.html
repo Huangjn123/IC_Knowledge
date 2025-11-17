@@ -4,11 +4,43 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>IC知识汇总</title>
+        <!-- 引入 Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- 引入 Font Awesome 图标 -->
+        <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <!-- 引入 本地CSS文件 -->
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css">
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Flaxbox.css">
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_grid.css">
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Tab.css">
-    </head>
+        <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/contact_block.css">
+        <!-- 配置 Tailwind 自定义主题 -->
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  primary: '#165DFF',
+                  secondary: '#722ED1',
+                  success: '#00B42A',
+                  warning: '#FF7D00',
+                  danger: '#F53F3F',
+                  info: '#86909C',
+                  dark: '#1D2129',
+                  light: '#F2F3F5'
+                },
+                fontFamily: {
+                  inter: ['Inter', 'system-ui', 'sans-serif'],
+                },
+                boxShadow: {
+                  'card': '0 4px 20px 0 rgba(0, 0, 0, 0.05)',
+                  'card-hover': '0 10px 30px 0 rgba(22, 93, 255, 0.15)',
+                }
+              },
+            }
+          }
+        </script>
+      </head>
     <body >
         <div class="fixed-text">
             <p style="text-align:center;">
@@ -17,7 +49,7 @@
                 <strong>
                     集成电路知识汇总
                 </strong>
-                <br>上次更新：2025.11.10
+                <br>上次更新：2025.11.17
             </p>
         </div>
         
@@ -39,6 +71,14 @@
 
         <div class="tab-content-container">
             <div class="tab-content active" id="basic">
+                <!-- 基础样式内容块 -->
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover">
+                  <h3 class="text-lg font-semibold text-dark mb-2">基础内容块</h3>
+                  <p class="text-info text-sm mb-4 text-balance">简洁大方的基础样式，适用于大多数信息展示场景，支持响应式布局。</p>
+                  <a href="#" class="inline-flex items-center text-primary text-sm font-medium hover:underline">
+                    查看详情 <i class="fa fa-arrow-right ml-1 text-xs"></i>
+                  </a>
+                </div>
                 <h1>基础知识</h1>
                 <h2> 集成电路</h2>
                 <p>集成电路（integrated circuit）是一种微型电子器件或部件。采用一定的工艺，把一个电路中所需的晶体管、电阻、电容和电感等元件及布线互连一起，制作在一小块或几小块半导体晶片或介质基片上，然后封装在一个管壳内，成为具有所需电路功能的微型结构；其中所有元件在结构上已组成一个整体，使电子元件向着微小型化、低功耗、智能化和高可靠性方面迈进了一大步。它在电路中用字母“IC”表示。集成电路发明者为杰克·基尔比（基于锗（Ge）的集成电路）和罗伯特·诺伊斯（基于硅（Si）的集成电路）。当今半导体工业大多数应用的是基于硅的集成电路。 </p>

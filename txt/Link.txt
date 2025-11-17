@@ -17,6 +17,8 @@ https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/Po
 https://raw.githubusercontent.com/Huangjn123/IC_Knowledge/refs/heads/main/CSS/frame.css
 https://huangjn123.github.io/IC_Knowledge/CSS/frame.css
 https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css
+https://huangjn123.github.io/IC_Knowledge/CSS/contact_block.css
+
 
 https://huangjn123.github.io/IC_Knowledge/JavaScript/Column_Trans.js
 
