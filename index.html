@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_grid.css">
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Tab.css">
         <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/contact_block.css">
+        <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Table.css">
         <!-- 配置 Tailwind 自定义主题 -->
         <script>
           tailwind.config = {
@@ -49,7 +50,7 @@
                 <strong>
                     集成电路知识汇总
                 </strong>
-                <br>上次更新：2025.11.17
+                <br>上次更新：2025.11.24
             </p>
         </div>
         
@@ -150,59 +151,212 @@
                 </div>
                 <!-- 芯片内容块 -->
                  <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
-                  <h1 class="text-lg font-semibold text-dark mb-2">神经网络架构</h1>
+                  <h1 class="text-lg font-semibold text-dark mb-2">FPGA架构</h1>
                   <p class="text-info text-sm mb-4 text-balance">
-                    结合工业界应用场景（如 AI 加速、边缘计算、计算机视觉 / 自然语言处理）和 FPGA 部署适配性，以下是主流神经网络架构的分类整理，包含核心特点、适用场景及与 FPGA 的适配关联（方便后续硬件实现选型）
-                    <!-- 基础表格：3列2行（1行表头 + 1行数据） -->
+                    FPGA（现场可编程门阵列）的架构是 “可编程硬件资源的结构化集合”，核心组件包括
                     <table border="1">
-                      <!-- 表头行 -->
                       <tr>
-                        <th>姓名</th>
-                        <th>年龄</th>
-                        <th>城市</th>
+                        <th>组件类型</th>
+                        <th colspan="2">功能说明</th>
                       </tr>
-                      <!-- 数据行1 -->
                       <tr>
-                        <td>张三</td>
-                        <td>25</td>
-                        <td>北京</td>
+                        <td>可编程逻辑块（CLB/SLAB）</td>
+                        <td colspan="2">FPGA 的 “基本逻辑单元”：含查找表（LUT，实现组合逻辑）、触发器（FF，实现时序逻辑）、进位链（快速加法 / 减法），是 RTL 代码映射的核心载体</td>
                       </tr>
-                      <!-- 数据行2 -->
                       <tr>
-                        <td>李四</td>
-                        <td>30</td>
-                        <td>上海</td>
+                        <td>互连资源（Interconnect）</td>
+                        <td colspan="2">连接所有组件的 “导线网络”：含全局时钟线、区域互连、长距离互连，决定信号传输延迟（时序关键）</td>
+                      </tr>
+                      <tr>
+                        <td>输入输出块（IOB）</td>
+                        <td colspan="2">FPGA 与外部芯片（如 DDR、ADC/DAC）的接口：支持 LVDS、DDR4 等协议，负责信号电平转换和时序匹配</td>
+                      </tr>
+                      <tr>
+                        <td>硬核资源（Hard IP）</td>
+                        <td colspan="2">固定功能的专用硬件：如 DSP48（数字信号处理）、BRAM/URAM（存储）、PCIe 控制器、以太网 MAC、CPU（如 Zynq 的 ARM Cortex），提升特定场景的性能和能效</td>
+                      </tr>
+                      <tr>
+                        <td>配置与时钟资源</td>
+                        <td colspan="2">配置电路（加载比特流文件）、时钟管理单元（PLL/MMCM，生成稳定时钟）</td>
                       </tr>
                     </table>
                   </p>
                 </div>
                 <!-- 芯片内容块 -->
                  <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
-                  <h1 class="text-lg font-semibold text-dark mb-2">华为AI芯片</h1>
-                  <p class="text-info text-sm mb-4 text-balance">华为目前开发的 AI 芯片以昇腾系列为核心，基于自研达芬奇架构，涵盖端、边、云全场景，包含 910C 等量产型号及 950 系列等规划产品，适配 AI 训练与推理任务并搭载自研 HBM 技术。
-                    <br>
-                    <span style="color: rgb(136, 20, 20);">
-                        <strong>
-                            昇腾系列 AI 芯片：昇腾 910B、昇腾 310P2、 昇腾 610、昇腾 950 系列（规划中）<br>
-                            Atlas 系列硬件产品：Atlas 300I Pro 推理卡、Atlas 500 Pro 智能边缘服务器
-                        </strong>
-                    </span>
+                  <h1 class="text-lg font-semibold text-dark mb-2">神经网络架构</h1>
+                  <p class="text-info text-sm mb-4 text-balance">
+                    结合工业界应用场景（如 AI 加速、边缘计算、计算机视觉 / 自然语言处理）和 FPGA 部署适配性，以下是主流神经网络架构的分类整理，包含核心特点、适用场景及与 FPGA 的适配关联（方便后续硬件实现选型）
+                    <!-- 基础表格：3列2行（1行表头 + 1行数据） -->
+                    <table border="1">
+                      <!-- 基础款-->
+                      <tr>
+                        <th colspan="4">核心基础架构（神经网络的 “基石”）</th>
+                      </tr>
+                      <tr>
+                        <td colspan="2">架构名称</td>
+                        <td>核心特点</td>
+                        <td>适用场景</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"> 多层感知机（MLP, Multi-Layer Perceptron）</td>
+                        <td>最基础的全连接神经网络，由输入层、隐藏层、输出层组成，每层神经元与下一层全连接，无空间 / 时序关联性建模</td>
+                        <td>简单分类 / 回归任务（如 MNIST 手写数字识别、数值预测）、神经网络入门场景</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="5"><strong>卷积神经网络（CNN, Convolutional Neural Network）</strong></td>
+                        <td>LeNet-5</td>
+                        <td rowspan="5">通过「卷积层（局部感知 + 权值共享）、池化层（下采样）、全连接层」提取空间特征，大幅减少参数数量，提升计算效率</td>
+                        <td>早期 CNN 经典（1998 年），用于手写数字识别，结构简单（5 层卷积 + 全连接），适合 FPGA 入门验证</td>
+                      </tr>
+                      <tr>
+                        <td>VGGNet（2014 年）</td>
+                        <td>深度提升至 16/19 层，采用 3×3 小卷积核堆叠，特征提取能力强，但参数量大（VGG19 约 1.4 亿参数），适合高精度场景（如图像分类），FPGA 部署需优化权值量化（如 INT8）</td>
+                      </tr>
+                      <tr>
+                        <td>ResNet（残差网络）（2015 年）</td>
+                        <td>核心是「残差连接（Skip Connection）」，解决深度网络梯度消失问题（支持 1000 + 层），是目前计算机视觉（CV）的基础架构（如 ResNet50/101/152），FPGA 部署需优化残差块的流水线设计</td>
+                      </tr>
+                      <tr>
+                        <td>DenseNet（稠密网络）（2017 年）</td>
+                        <td>每层与所有前层连接，特征复用率高，参数量少，但内存访问密集，FPGA 需优化 BRAM/URAM 的存储带宽</td>
+                      </tr>
+                    </table>
                   </p>
-                </div>
-                <!-- 芯片内容块 -->
-                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
-                  <h1 class="text-lg font-semibold text-dark mb-2">英伟达AI芯片</h1>
-                  <p class="text-info text-sm mb-4 text-balance">英伟达目前开发的 AI 芯片涵盖云端训练 / 推理芯片（如 Hopper 架构 H100、Blackwell 架构 GB300）、边缘计算芯片（Jetson Orin 系列）、自动驾驶芯片（DRIVE Thor）及数据中心 DPU（BlueField-3），形成覆盖 “云 - 边 - 端” 全场景的 AI 算力矩阵，并通过 CUDA 生态和 NVLink 技术实现高效协同。
-                    <br>
-                    <span style="color: rgb(136, 20, 20);">  
-                        <strong>
-                            Blackwell 架构旗舰：GB300 NVL72、GB200 NVL72 <br>
-                            Hopper 架构主力：H100<br>
-                            边缘计算王者：Jetson AGX Orin <br>
-                            自动驾驶核心：DRIVE Thor<br>
-                            数据中心革新者：BlueField-3 DPU<br>
-                        </strong>
-                    </span>
+
+                  <p>
+                    <table border="1">
+                      <!-- 轻量级Unet-->
+                      <tr>
+                        <th colspan="4">轻量级 CNN 架构（边缘计算 / FPGA 部署首选）<strong>Unet</strong></th>
+                      </tr>
+                      <tr>
+                        <td colspan="2">架构名称</td>
+                        <td>核心特点</td>
+                        <td>FPGA适配</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">MobileNet 系列（Google）</td>
+                        <td>采用「深度可分离卷积（Depthwise Separable Convolution）」，将标准卷积拆分为 “深度卷积 + 逐点卷积”，计算量减少 8-9 倍</td>
+                        <td>计算量小、内存访问友好，是边缘 FPGA 部署的首选（如安防摄像头、工业检测的图像分类），可通过 DSP 复用提升资源利用率</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">EfficientNet 系列（Google）</td>
+                        <td>采用「复合缩放策略（Width/Depth/Resolution 同时缩放）」，在精度和效率上达到最优平衡，比 MobileNet 精度更高，计算量相当</td>
+                        <td>支持 INT8/INT4 量化，计算密度高，适合对精度有要求的边缘加速场景（如医疗影像边缘分析）</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">ShuffleNet 系列（旷视</td>
+                        <td>采用「通道洗牌（Channel Shuffle）」解决分组卷积的特征隔离问题，计算量极低，适合超低成本 FPGA</td>
+                        <td>/</td>
+                      </tr>
+                    </table>
+                  </p>
+
+                  <p>
+                    <table border="1">
+                      <!-- 循环-->
+                      <tr>
+                        <th colspan="4">循环神经网络（RNN）及其变种（序列数据处理）</th>
+                      </tr>
+                      <tr>
+                        <td colspan="2">架构名称</td>
+                        <td>核心特点</td>
+                        <td>适用场景</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">RNN（基础循环神经网络）</td>
+                        <td>隐藏层神经元之间有连接，保留前一时刻的状态，但存在 “长期依赖消失 / 爆炸” 问题，仅适合短序列数据</td>
+                        <td>简单时序预测（如温度预测）、短文本分类</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">LSTM（长短期记忆网络）</td>
+                        <td>通过「输入门、遗忘门、输出门」和细胞状态（Cell State）解决长期依赖问题，能建模长序列上下文</td>
+                        <td>语音识别、机器翻译、时序信号分析（如 FPGA 部署的工业传感器数据异常检测）</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">GRU（门控循环单元）</td>
+                        <td>简化 LSTM 结构（合并输入门和遗忘门为更新门），参数量更少，训练 / 推理速度更快</td>
+                        <td>替代 LSTM 的高效场景（如实时语音转文字），FPGA 部署资源占用比 LSTM 低</td>
+                      </tr>
+                    </table>
+                  </p>
+
+                  <p>
+                    <table border="1">
+                      <!-- Transformer-->
+                      <tr>
+                        <th colspan="4">Transformer 架构（注意力机制，NLP/CV 通用）</th>
+                      </tr>
+                      <tr>
+                        <td colspan="2">架构名称</td>
+                        <td>核心特点</td>
+                        <td>适用场景/FPGA适配</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">基础 Transformer（Encoder-Decoder 架构）</td>
+                        <td>由 Encoder（编码层，含多头注意力、Feed-Forward 网络）和 Decoder（解码层，含掩码注意力）组成，并行处理序列数据，无需依赖时序迭代</td>
+                        <td>机器翻译、文本摘要、语音合成</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">BERT（Bidirectional Encoder Representations from Transformers）</td>
+                        <td>仅使用 Transformer Encoder，双向注意力建模上下文，预训练 + 微调范式，刷新 NLP 任务精度</td>
+                        <td>多头注意力计算密集，适合 FPGA 的并行加速（如 DSP 集群实现矩阵乘法），蒸馏版（DistilBERT）更适合边缘 FPGA 部署</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">GPT（Generative Pre-trained Transformer）</td>
+                        <td>仅使用 Transformer Decoder，单向注意力，专注生成式任务，自回归生成文本</td>
+                        <td>超大模型需 FPGA 集群或异构计算（如 Xilinx Versal 的 AI Core），轻量化版本（如 GPT-2 Small）可部署于高端 FPGA</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">ViT（Vision Transformer）</td>
+                        <td>将 CV 任务（图像分类）转化为序列任务（图像分割为 Patch，作为 Transformer 的输入），无需卷积层，精度超越 CNN</td>
+                        <td>Patch 嵌入和自注意力计算可并行优化，DeiT 等轻量化版本适合 FPGA 部署（如自动驾驶的图像识别）</td>
+                      </tr>
+                    </table>
+                  </p>
+                  <p>
+                    <table border="1">
+                      <!-- 专用-->
+                      <tr>
+                        <th colspan="4">专用任务架构（CV/NLP 特定场景）</th>
+                      </tr>
+                      <tr>
+                        <td>架构类型</td>
+                        <td colspan="2">架构名称</td>
+                        <td>特点</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="3">目标检测架构</td>
+                        <td colspan="2">YOLO 系列（You Only Look Once）</td>
+                        <td>单次检测，速度快，适合实时场景（如 YOLOv5/v8，支持 INT8 量化，FPGA 部署热门）</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">SSD（Single Shot MultiBox Detector）</td>
+                        <td>多尺度特征图检测，适合中小目标</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">Faster R-CNN</td>
+                        <td>两阶段检测（候选区域生成 + 分类），精度高但速度慢，适合高精度场景（如医疗影像检测）</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2">语义分割架构</td>
+                        <td colspan="2">U-Net</td>
+                        <td>Encoder-Decoder + 跳跃连接，适合医学影像分割（如 CT/MRI 分割），FPGA 部署需优化特征图的存储和传输</td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">SegNet</td>
+                        <td>基于 VGG 的 Encoder-Decoder，适合实时语义分割（如自动驾驶场景）</td>
+                      </tr>
+                      <tr>
+                        <td>生成对抗网络（GAN）</td>
+                        <td colspan="2">DCGAN（基于 CNN 的 GAN，生成图像）、StyleGAN（生成高清人脸）、CycleGAN（图像风格迁移）</td>
+                        <td>由生成器（Generator）和判别器（Discriminator）对抗训练，生成逼真数据</td>
+                      </tr>
+                    </table>
+                  </p>
+                  <p>
+                    轻量级CNN、目标检测、序列处理、轻量化Transformer和专用任务架构是 FPGA 部署的首选，因其计算量低、内存访问友好，适合资源受限的硬件环境。通过 INT8/INT4 量化、模型剪枝和流水线优化等技术，可进一步提升 FPGA 上的推理速度和能效比，满足边缘计算和实时处理需求。
                   </p>
                 </div>
             </div>
