@@ -65,3 +65,32 @@ text-balance	文本自动平衡排版
     查看详情 <i class="fa fa-arrow-right ml-1 text-xs"></i>
   </a>
 </div>
+
+
+//表格制造
+<table>	表格容器（根标签）	所有表格内容必须包裹其中
+<tr>	表格行（table row）	代表表格的一行
+<td>	普通单元格（table data）	行内的普通数据单元格
+<th>	表头单元格（table header）	行内的标题单元格（默认加粗居中）
+
+<!-- 基础表格：3列2行（1行表头 + 1行数据） -->
+                    <table border="1">
+                      <!-- 表头行 -->
+                      <tr>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>城市</th>
+                      </tr>
+                      <!-- 数据行1 -->
+                      <tr>
+                        <td>张三</td>
+                        <td>25</td>
+                        <td>北京</td>
+                      </tr>
+                      <!-- 数据行2 -->
+                      <tr>
+                        <td>李四</td>
+                        <td>30</td>
+                        <td>上海</td>
+                      </tr>
+                    </table>

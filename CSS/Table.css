@@ -1,0 +1,30 @@
+  /* 表格整体样式 */
+  table {
+    width: 80%;          /* 宽度占父容器80% */
+    border-collapse: collapse; /* 合并边框（替代cellspacing="0"） */
+    margin: 20px auto;   /* 居中显示 */
+  }
+  
+  /* 表头样式 */
+  th {
+    background-color: #4CAF50; /* 背景色 */
+    color: white;        /* 文字颜色 */
+    padding: 12px;       /* 内边距（替代cellpadding） */
+    text-align: left;    /* 文字左对齐（默认居中，可修改） */
+  }
+  
+  /* 单元格样式 */
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd; /* 底部边框分隔行 */
+  }
+  
+  /* 交替行颜色（斑马纹） */
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* 鼠标悬浮效果 */
+  tbody tr:hover {
+    background-color: #e0e0e0;
+  }

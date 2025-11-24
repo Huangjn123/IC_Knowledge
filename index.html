@@ -66,6 +66,7 @@
         <div class="tab-nav">
           <button data-target="basic">基础知识</button>
           <button data-target="AI">人工智能</button>
+          <button data-target="Architecture">架构</button>
           <button data-target="Employment directions">就业方向</button>
         </div>
 
@@ -103,6 +104,77 @@
                  <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
                   <h1 class="text-lg font-semibold text-dark mb-2">AI芯片</h1>
                   <p class="text-info text-sm mb-4 text-balance">AI 芯片是专为深度学习等人工智能任务优化设计的专用芯片，通过定制化架构强化并行计算与矩阵运算能力，能效比远超传统通用芯片，它既支撑着手机图像识别、语音唤醒等终端智能功能，也为自动驾驶环境感知、云端大模型训练推理等复杂场景提供核心算力，是人工智能技术从理论落地到实际应用、推动各行业智能升级的关键硬件基石。</p>
+                </div>
+                <!-- 芯片内容块 -->
+                 <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">华为AI芯片</h1>
+                  <p class="text-info text-sm mb-4 text-balance">华为目前开发的 AI 芯片以昇腾系列为核心，基于自研达芬奇架构，涵盖端、边、云全场景，包含 910C 等量产型号及 950 系列等规划产品，适配 AI 训练与推理任务并搭载自研 HBM 技术。
+                    <br>
+                    <span style="color: rgb(136, 20, 20);">
+                        <strong>
+                            昇腾系列 AI 芯片：昇腾 910B、昇腾 310P2、 昇腾 610、昇腾 950 系列（规划中）<br>
+                            Atlas 系列硬件产品：Atlas 300I Pro 推理卡、Atlas 500 Pro 智能边缘服务器
+                        </strong>
+                    </span>
+                  </p>
+                </div>
+                <!-- 芯片内容块 -->
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">英伟达AI芯片</h1>
+                  <p class="text-info text-sm mb-4 text-balance">英伟达目前开发的 AI 芯片涵盖云端训练 / 推理芯片（如 Hopper 架构 H100、Blackwell 架构 GB300）、边缘计算芯片（Jetson Orin 系列）、自动驾驶芯片（DRIVE Thor）及数据中心 DPU（BlueField-3），形成覆盖 “云 - 边 - 端” 全场景的 AI 算力矩阵，并通过 CUDA 生态和 NVLink 技术实现高效协同。
+                    <br>
+                    <span style="color: rgb(136, 20, 20);">  
+                        <strong>
+                            Blackwell 架构旗舰：GB300 NVL72、GB200 NVL72 <br>
+                            Hopper 架构主力：H100<br>
+                            边缘计算王者：Jetson AGX Orin <br>
+                            自动驾驶核心：DRIVE Thor<br>
+                            数据中心革新者：BlueField-3 DPU<br>
+                        </strong>
+                    </span>
+                  </p>
+                </div>
+            </div>
+
+            <div class="tab-content" id="Architecture">
+                <!-- 架构内容块 -->
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">架构</h1>
+                  <p class="text-info text-sm mb-4 text-balance">
+                    架构（Architecture）本质是系统级的结构化设计方案，明确了系统的核心组件、组件间的交互规则、底层资源的组织方式，以及系统功能与性能的实现逻辑。它是连接硬件与软件的桥梁，指导着系统的开发与优化。良好的架构设计能够提升系统的可扩展性、性能和可靠性，是复杂系统成功的关键。
+                    <br><br><strong>通用层面：</strong>架构是 “骨架”，区别于具体的 “血肉”（如代码、组件实例），决定了系统的 能力上限、扩展潜力、资源效率。
+                    <br><strong>计算机领域：</strong>架构指计算机系统的整体设计方案，包括处理器架构（如 RISC、CISC）、存储架构（如层次化缓存设计）、指令集架构（ISA）等，决定了计算机的性能、指令执行方式和资源管理。
+                    <br><strong>软件领域：</strong>架构指软件系统的高层设计方案，如微服务架构、MVC 架构等，决定了系统的模块划分、组件交互方式和数据流动路径。
+                    <br><strong>硬件领域：</strong>架构聚焦 “硬件资源如何组织”（如逻辑单元、存储单元、互连网络的布局），直接影响硬件的时序、功耗、成本和应用场景适配性。
+                  </p>
+                </div>
+                <!-- 芯片内容块 -->
+                 <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">神经网络架构</h1>
+                  <p class="text-info text-sm mb-4 text-balance">
+                    结合工业界应用场景（如 AI 加速、边缘计算、计算机视觉 / 自然语言处理）和 FPGA 部署适配性，以下是主流神经网络架构的分类整理，包含核心特点、适用场景及与 FPGA 的适配关联（方便后续硬件实现选型）
+                    <!-- 基础表格：3列2行（1行表头 + 1行数据） -->
+                    <table border="1">
+                      <!-- 表头行 -->
+                      <tr>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>城市</th>
+                      </tr>
+                      <!-- 数据行1 -->
+                      <tr>
+                        <td>张三</td>
+                        <td>25</td>
+                        <td>北京</td>
+                      </tr>
+                      <!-- 数据行2 -->
+                      <tr>
+                        <td>李四</td>
+                        <td>30</td>
+                        <td>上海</td>
+                      </tr>
+                    </table>
+                  </p>
                 </div>
                 <!-- 芯片内容块 -->
                  <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
