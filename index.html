@@ -50,7 +50,7 @@
                 <strong>
                     集成电路知识汇总
                 </strong>
-                <br>上次更新：2025.11.24
+                <br>上次更新：2025.12.01
             </p>
         </div>
         
@@ -68,10 +68,14 @@
           <button data-target="basic">基础知识</button>
           <button data-target="AI">人工智能</button>
           <button data-target="Architecture">架构</button>
+          <button data-target="Beginner Guide">菜鸟入门</button>
           <button data-target="Employment directions">就业方向</button>
         </div>
 
         <div class="tab-content-container">
+          <!-- ********************************************************************************************* -->
+          <!-- ****************************************基础知识内容块**************************************** -->
+          <!-- ********************************************************************************************* -->
             <div class="tab-content active" id="basic">
                 <!-- 集成电路内容块 -->
                 <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
@@ -94,7 +98,9 @@
                   <p class="text-info text-sm mb-4 text-balance">数字集成电路是将元器件和连线集成于同一半导体芯片上而制成的数字逻辑电路或系统。根据数字集成电路中包含的门电路或元、器件数量，可将数字集成电路分为小规模集成（SSI）电路、中规模集成MSI电路、大规模集成（LSI）电路、超大规模集成VLSI电路和特大规模集成（ULSI）电路。</p>
                 </div>
             </div>
-            
+          <!-- ********************************************************************************************* -->
+          <!-- ****************************************人工智能内容块**************************************** -->
+          <!-- ********************************************************************************************* -->
             <div class="tab-content" id="AI">
                 <!-- 人工智能内容块 -->
                 <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
@@ -136,7 +142,9 @@
                   </p>
                 </div>
             </div>
-
+          <!-- ***************************************************************************************** -->
+          <!-- ****************************************架构内容块**************************************** -->
+          <!-- ***************************************************************************************** -->
             <div class="tab-content" id="Architecture">
                 <!-- 架构内容块 -->
                 <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
@@ -360,7 +368,61 @@
                   </p>
                 </div>
             </div>
-
+          <!-- ********************************************************************************************* -->
+          <!-- ****************************************菜鸟入门内容块**************************************** -->
+          <!-- ********************************************************************************************* -->
+            <div class="tab-content" id="Beginner Guide">
+                <!-- 明确内容块 -->
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">明确目标</h1>
+                  <p class="text-info text-sm mb-4 text-balance">集成电路IC产业链包括上游的EDA工具、IP核、硅材料、光刻机和刻蚀机等基础设施，中游的芯片设计（Fabless）、 晶圆制造（Foundry）和封装测试（OSAT）等实现制造，下游的具体通信、计算机、消费电子和汽车电子等应用。在该产业链上选择自己感兴趣的方向，每周投入时间，学习基础技能，逐步成长为行业大佬。根据方向，需要掌握高等数学、线性代数、大学物理、<span style="color: rgb(136, 20, 20);">电路基础、模拟电子技术、数字电子技术、</span>半导体物理、CMOS基础和制造工艺概述等基础内容。</p>
+                </div>
+                <!-- 语言技能内容块 -->
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">语言技能</h1>
+                  <p class="text-info text-sm mb-4 text-balance">对于数字IC：首先学习硬件描述语言，Verilog HDL实现基本的电路，如流水灯、加法器和状态机等基础功能。之后进阶使用System Verilog，当前产业届(2025年)基本使用该语言。
+                    <br>之后进行FPGA开发，完成RTL设计、仿真、综合、布局布线和下载等流程。推荐使用Xilinx的Vivado和Intel的Quartus Prime两大主流FPGA开发工具。可以实现流水灯、数码管显示和UART通信等基础功能，SPI控制器、I2C接口和简单CPU核（如Nios II软核）等进阶功能。
+                    <br>最后进行数字IC设计流程。前端设计进行RTL编码、功能仿真、逻辑综合、形式验证和时序分析等工作，后端设计进行布局规划、时钟树综合、布线和物理验证（DRC/LVS）等工作。
+                    <br>仿真工具推荐ModelSim和VCS，综合工具推荐Synopsys Design Compiler和Cadence Genus，布局布线工具推荐Synopsys IC Compiler II和Cadence Innovus。
+                  </p>
+                  <p class="text-info text-sm mb-4 text-balance">
+                    对于模拟IC：首先学习模拟电路基础，掌握放大器、滤波器、振荡器和电源管理等基本电路的设计原理和分析方法。推荐教材《微电子电路》（Sedra/Smith）和《模拟集成电路设计》（Gray/Meyer）。
+                    <br>之后进行SPICE仿真，使用LTspice、Cadence Spectre或HSPICE等工具，完成基本电路的仿真验证，如共射放大器、差分对和运算放大器等。
+                    <br>最后进行模拟IC设计流程。前端设计进行电路设计、版图设计和DRC/LVS验证等工作，后端设计进行版图优化、寄生提取和后仿真验证等工作。
+                    <br>版图设计工具推荐Cadence Virtuoso和Mentor Graphics Pyxis，寄生提取工具推荐Synopsys StarRC和Cadence Quantus。
+                  </p>
+                </div>
+                <!-- 系统设计与验证能力内容块 -->
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">系统开发</h1>
+                  <p class="text-info text-sm mb-4 text-balance">首先学习SoC系统设计，了解CPU组成、存储器层次、总线协议（AXI/AHB/APB）等计算机体系结构，进行IP核选择、总线架构设计、电源管理、时钟管理等片上系统集成，可以先实现开源处理器RISC-V入门。
+                    <br>之后学习验证方法学，掌握UVM验证流程、约束随机验证、覆盖率驱动验证和断言验证等技术，进行测试计划制定、测试用例编写、仿真执行和覆盖率分析等工作。
+                    <br>最后提升高级技能，包括低功耗设计、DFT设计、高速接口设计和多时钟域设计等内容，进行功耗分析、测试点插入、高速信号完整性分析和时钟域交叉处理等工作。
+                  </p>
+                </div>
+                <!-- 项目实践内容块 -->
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">项目实践</h1>
+                  <p class="text-info text-sm mb-4 text-balance">实践锻炼，参与项目实践，逐步选择SPI控制器、UART IP核，图像处理加速器、音视频编解码器、RISC-V处理器+外设SoC等项目，先进行需求分析，了解所有可能的场景以及大小需求，然后进行上述的语言技能和系统开发实践
+                    <br>行业融入，积极参与实习和行业交流，了解最新的技术动态和行业趋势，积累实际工作经验，提升综合能力。从出击工程师做起，参与模块设计界和验证。
+                    <br>持续学习，集成电路行业技术更新迅速，保持学习热情，关注前沿技术和新兴工具，不断提升专业水平和竞争力。
+                    <br>行业会议有中国IC设计年会、国际固态电路会议（ISSCC）、设计自动化会议（DAC）等。技术社区有EETOP、知乎、CSDN、GitHub等。
+                  </p>
+                </div>
+                <!-- 持续成长内容块 -->
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">持续成长</h1>
+                  <p class="text-info text-sm mb-4 text-balance">技术深耕，提升领导力，选定一个领域（如AI芯片、处理器设计、低功耗）成为专家，带领团队攻克技术难题，负责重要项目架构设计，发表论文、专利，参与标准制定，技术演讲
+                    <br>持续学习，广纳新知识，跟踪Chiplet、3D封装、RISC-V生态、AI+EDA等前沿技术，跨领域学习计算机体系、医学、建筑等学科的知识，关注行业动态，参加高级培训，保持技术敏感度。
+                  </p>
+                </div>
+                <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+                  <h1 class="text-lg font-semibold text-dark mb-2">立即行动，及时反馈，总结规划，立即行动</h1>
+                </div>
+            </div>
+          <!-- ********************************************************************************************* -->
+          <!-- ****************************************就业方向内容块**************************************** -->
+          <!-- ********************************************************************************************* -->
             <div class="tab-content" id="Employment directions">
                 <!-- 集成电路设计内容块 -->
                 <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
