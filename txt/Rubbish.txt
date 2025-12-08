@@ -47,3 +47,7 @@
   text-align:center;
   border: 1px solid #000000;
 }
+
+            <h1>IC Knowledge Pooling</h1>
+            <p>哈基米南北绿豆，阿西噶阿西
+            </p>
