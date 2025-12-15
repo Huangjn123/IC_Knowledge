@@ -1,13 +1,88 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html>
-<head>
-  <title>压抑小网站</title>
-  <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/frame.css" type="text/css">
-</head>
-<body>
-  <h1>想什么呢</h1>
-  <p>性压抑（Sexual Repression）也称为性饥饿，是指人本身有欲望，但出于种种原因无法发泄，只能对自己进行制约和控制的一种生理状态和心理状态。</p>
-  <p><a href="https://huangjn123.github.io/IC_Knowledge/index.html">返回首页</a></p>
-</body>
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>姜老师实验室</title>
+      <!-- 引入 Tailwind CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- 引入 Font Awesome 图标 -->
+      <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <!-- 引入 本地CSS文件 -->
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Flaxbox.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_grid.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Tab.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/contact_block.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Table.css">
+      <!-- 配置 Tailwind 自定义主题 -->
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#165DFF',
+                secondary: '#722ED1',
+                success: '#00B42A',
+                warning: '#FF7D00',
+                danger: '#F53F3F',
+                info: '#86909C',
+                dark: '#1D2129',
+                light: '#F2F3F5'
+              },
+              fontFamily: {
+                inter: ['Inter', 'system-ui', 'sans-serif'],
+              },
+              boxShadow: {
+                'card': '0 4px 20px 0 rgba(0, 0, 0, 0.05)',
+                'card-hover': '0 10px 30px 0 rgba(22, 93, 255, 0.15)',
+              }
+            },
+          }
+        }
+      </script>
+  </head>
+  <body>
+      <header style="width: 100%;height: 20vh;justify-content: center; align-items: center;display: flex;">
+        <div style="font-size: 80px;font-weight: 600;text-shadow: 0 3px 6px rgba(0, 0, 0, 1);color:#222;"> 
+          姜老师实验室
+        </div>
+      </header>
+      <main style="width: 100%; max-width: 1200px; margin: 0 auto; ">
+        <div class="fixed-text">
+            <p style="text-align:center;">
+                <img src="https://huangjn123.github.io/IC_Knowledge/Image/hajimi.jpg" alt="哈基米" width="40px" height="40px">
+            </p>
+        </div>
+        
+        <div class = "hajimi" >
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/index.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">主页</a></button>  
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/Developing.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">HTML实验网站</a></button>
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/about.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">老姜实验室</a></button>  
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/work.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline"> 岗位待遇</a></button>  
+            <button onclick="alert('祝你今天过得开心!早睡早起，身体健康，永远不死')">点击送温暖</button>
+        </div>
+        
+        <div class="tab-content-container">
+        <!-- ********************************************************************************************* -->
+        <!-- ****************************************老姜实验室**************************************** -->
+        <!-- ********************************************************************************************* -->
+          <div class="tab-content active" id="basic">
+            <!-- 老姜实验室 -->
+            <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+              <h1 class="text-lg font-semibold text-dark mb-2">姜老师实验室<i class="fa fa-thumbs-up text-primary text-xl"></i>	</h1>
+              <p class="text-info text-sm mb-4 text-center">
+                <p>同济大学AI科研天团，有梦你就来</p>
+                <p>集成电路AI硬件加速器</p>
+                <p>神经网络架构部署</p>
+                <p>AI芯片流片</p>
+                <p>联系方式：</p>
+                <p>QQ:2325704576</p>
+                <p>WX:hjnzxyd</p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+  </body>
 </html>

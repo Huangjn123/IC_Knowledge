@@ -1,34 +1,84 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>多栏目切换</title>
-  <!-- 引入 CSS 样式文件 -->
-  <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Tab.css">
-</head>
-<body>
-  <div class="tab-nav">
-    <button data-target="home">首页</button>
-    <button data-target="about">关于</button>
-    <button data-target="contact">联系</button>
-  </div>
-
-  <div class="tab-content-container">
-    <div class="tab-content active" id="home">
-      <!-- 首页内容 -->
-      <h1>欢迎来到首页</h1>
-    </div>
-    <div class="tab-content" id="about">
-      <!-- 关于页内容 -->
-      <h1>关于我们</h1>
-    </div>
-    <div class="tab-content" id="contact">
-      <!-- 联系页内容 -->
-      <h1>联系我们</h1>
-    </div>
-  </div>
-  <!-- 引入 JavaScript 文件（放在 body 末尾，确保 DOM 加载完成） -->
-  <script src="https://huangjn123.github.io/IC_Knowledge/JavaScript/Column_Trans.js"></script>
-</body>
+<html>
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>HTML实验网站</title>
+      <!-- 引入 Tailwind CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- 引入 Font Awesome 图标 -->
+      <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <!-- 引入 本地CSS文件 -->
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Flaxbox.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_grid.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Tab.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/contact_block.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Table.css">
+      <!-- 配置 Tailwind 自定义主题 -->
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#165DFF',
+                secondary: '#722ED1',
+                success: '#00B42A',
+                warning: '#FF7D00',
+                danger: '#F53F3F',
+                info: '#86909C',
+                dark: '#1D2129',
+                light: '#F2F3F5'
+              },
+              fontFamily: {
+                inter: ['Inter', 'system-ui', 'sans-serif'],
+              },
+              boxShadow: {
+                'card': '0 4px 20px 0 rgba(0, 0, 0, 0.05)',
+                'card-hover': '0 10px 30px 0 rgba(22, 93, 255, 0.15)',
+              }
+            },
+          }
+        }
+      </script>
+  </head>
+  <body>
+      <header style="width: 100%;height: 20vh;justify-content: center; align-items: center;display: flex;">
+        <div style="font-size: 80px;font-weight: 600;text-shadow: 0 3px 6px rgba(0, 0, 0, 1);color:#222;"> 
+          HTML实验网站
+        </div>
+      </header>
+      <main style="width: 100%; max-width: 1200px; margin: 0 auto; ">
+        <div class="fixed-text">
+            <p style="text-align:center;">
+                <img src="https://huangjn123.github.io/IC_Knowledge/Image/hajimi.jpg" alt="哈基米" width="40px" height="40px">
+            </p>
+        </div>
+        
+        <div class = "hajimi" >
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/index.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">主页</a></button>  
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/Developing.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">HTML实验网站</a></button>
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/about.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">老姜实验室</a></button>  
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/work.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline"> 岗位待遇</a></button>  
+            <button onclick="alert('祝你今天过得开心!早睡早起，身体健康，永远不死')">点击送温暖</button>
+        </div>
+        
+        <div class="tab-content-container">
+        <!-- ********************************************************************************************* -->
+        <!-- ****************************************HTML必备**************************************** -->
+        <!-- ********************************************************************************************* -->
+          <div class="tab-content active" id="basic">
+            <!-- HTML必备 -->
+            <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+              <h1 class="text-lg font-semibold text-dark mb-2">HTML必备<i class="fa fa-thumbs-up text-primary text-xl"></i>	</h1>
+              <p class="text-info text-sm mb-4 text-left">
+                <p>网页文件.html</p>
+                <p>网页样式.css</p>
+                <p>网页动作.js</p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+  </body>
 </html>

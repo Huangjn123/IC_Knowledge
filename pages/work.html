@@ -1,21 +1,92 @@
 <!-- about.html -->
 <!DOCTYPE html>
 <html>
-<head>
-  <title>薪资待遇</title>
-</head>
-<body>
-  <h1>小道消息</h1>
-  <p>歌尔股份&emsp;模拟IC设计&emsp;985博士&emsp;32K*14</p>
-  <p>南芯&emsp;模拟IC设计&emsp;985硕士&emsp;31K*16</p>
-  <p>海光&emsp;数字IC设计&emsp;985硕士&emsp;41w</p>
-  <p>紫光同创&emsp;数字IC设计&emsp;985硕士&emsp;27K*15</p>
-  <p>中兴&emsp;IC设计&emsp;211硕士&emsp;24K*14</p>
-  <p>昆泰芯电子&emsp;芯片测试&emsp;普通硕士&emsp;15K(基本4K+固定薪资9K+绩效2K)*12(年终0-1)</p>
-  <p>芯粤能&emsp;器件设计&emsp;双非本硕&emsp;年包23万</p>
-  <p>立微&emsp;eda应用工程师&emsp;985硕士&emsp;base不到2万，总包27万多</p>
-  <p>中兴微&emsp;模拟IC设计&emsp;&emsp;42kx12</p>
-  <p>帝錾显峙奥微&emsp;数字IC设计&emsp;&emsp;30K*15</p>
-  <p><a href="https://huangjn123.github.io/IC_Knowledge/index.html">返回首页</a></p>
-</body>
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>集成电路岗位待遇</title>
+      <!-- 引入 Tailwind CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <!-- 引入 Font Awesome 图标 -->
+      <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <!-- 引入 本地CSS文件 -->
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Possition.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Flaxbox.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_grid.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Layout_Tab.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/contact_block.css">
+      <link rel="stylesheet" href="https://huangjn123.github.io/IC_Knowledge/CSS/Table.css">
+      <!-- 配置 Tailwind 自定义主题 -->
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: '#165DFF',
+                secondary: '#722ED1',
+                success: '#00B42A',
+                warning: '#FF7D00',
+                danger: '#F53F3F',
+                info: '#86909C',
+                dark: '#1D2129',
+                light: '#F2F3F5'
+              },
+              fontFamily: {
+                inter: ['Inter', 'system-ui', 'sans-serif'],
+              },
+              boxShadow: {
+                'card': '0 4px 20px 0 rgba(0, 0, 0, 0.05)',
+                'card-hover': '0 10px 30px 0 rgba(22, 93, 255, 0.15)',
+              }
+            },
+          }
+        }
+      </script>
+  </head>
+  <body>
+      <header style="width: 100%;height: 20vh;justify-content: center; align-items: center;display: flex;">
+        <div style="font-size: 80px;font-weight: 600;text-shadow: 0 3px 6px rgba(0, 0, 0, 1);color:#222;"> 
+          集成电路岗位待遇
+        </div>
+      </header>
+      <main style="width: 100%; max-width: 1200px; margin: 0 auto; ">
+        <div class="fixed-text">
+            <p style="text-align:center;">
+                <img src="https://huangjn123.github.io/IC_Knowledge/Image/hajimi.jpg" alt="哈基米" width="40px" height="40px">
+            </p>
+        </div>
+        
+        <div class = "hajimi" >
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/index.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">主页</a></button>  
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/Developing.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">HTML实验网站</a></button>
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/about.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline">老姜实验室</a></button>  
+            <button><a href ="https://huangjn123.github.io/IC_Knowledge/pages/work.html" class="inline-flex items-center text-primary text-sm font-medium hover:underline"> 岗位待遇</a></button>  
+            <button onclick="alert('祝你今天过得开心!早睡早起，身体健康，永远不死')">点击送温暖</button>
+        </div>
+        
+        <div class="tab-content-container">
+        <!-- ********************************************************************************************* -->
+        <!-- ****************************************小道消息**************************************** -->
+        <!-- ********************************************************************************************* -->
+          <div class="tab-content active" id="basic">
+            <!-- 小道消息 -->
+            <div class="content-block bg-white rounded-xl p-6 shadow-card content-block-transition content-block-hover mb-6">
+              <h1 class="text-lg font-semibold text-dark mb-2">小道消息<i class="fa fa-thumbs-up text-primary text-xl"></i>	</h1>
+              <p class="text-info text-sm mb-4 text-left">
+                <p>歌尔股份&emsp;模拟IC设计&emsp;985博士&emsp;32K*14</p>
+                <p>南芯&emsp;模拟IC设计&emsp;985硕士&emsp;31K*16</p>
+                <p>海光&emsp;数字IC设计&emsp;985硕士&emsp;41w</p>
+                <p>紫光同创&emsp;数字IC设计&emsp;985硕士&emsp;27K*15</p>
+                <p>中兴&emsp;IC设计&emsp;211硕士&emsp;24K*14</p>
+                <p>昆泰芯电子&emsp;芯片测试&emsp;普通硕士&emsp;15K(基本4K+固定薪资9K+绩效2K)*12(年终0-1)</p>
+                <p>芯粤能&emsp;器件设计&emsp;双非本硕&emsp;年包23万</p>
+                <p>立微&emsp;eda应用工程师&emsp;985硕士&emsp;base不到2万，总包27万多</p>
+                <p>中兴微&emsp;模拟IC设计&emsp;&emsp;42kx12</p>
+                <p>帝錾显峙奥微&emsp;数字IC设计&emsp;&emsp;30K*15</p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+  </body>
 </html>
