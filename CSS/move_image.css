@@ -1,23 +1,26 @@
-.full-page-img {
-  width: 40px; /* 图片尺寸，按需调整 */
-  height: auto;
-  position: fixed; /* 关键：基于整个视口定位，脱离所有容器 */
-  left: -120px; /* 初始在视口左侧外 */
-  z-index: 998; /* 确保不被其他元素遮挡 */
-  opacity: 0.3;
-  animation: movePath 8s linear infinite;
+.img-container {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #eee;
+  position: relative; /* 作为图片定位的参考 */
+  overflow: hidden; /* 可选：隐藏超出容器的部分 */
+  opacity: 0.5;
+}
+
+.move-img {
+  animation: movePath 8s ease infinite;
 }
 
 /* 斜向→右→下 循环移动 */
 @keyframes movePath {
-  0% { transform: translate(0, 0); left: -120px; /* 起点：视口左侧外 */}        /* 起点 */
+  0% { transform: translate(0, 0); }        /* 起点 */
   25% { transform: translate(300px, 100px); } /* 斜右下 */
   50% { transform: translate(600px, 0); }    /* 右 */
   75% { transform: translate(300px, -100px); } /* 斜右上 */
-  100% { transform: translate(0, 0); left: 100vw; /* 终点：视口右侧外（100vw=整个网页宽度） */}       /* 回到起点 */
+  100% { transform: translate(0, 0); }       /* 回到起点 */
 }
 
-.full-page-img:hover {
+.move-img:hover {
   animation-play-state: paused; /* 悬浮暂停，离开继续 */
   cursor: pointer; /* 鼠标手型，提升交互 */
 }
